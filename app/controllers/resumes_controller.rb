@@ -3,7 +3,10 @@ class ResumesController < ApplicationController
    
 
   def check_for_top_secret
-    render :text => "Not authorized", :status => 403 if params[:id] && params[:id].to_i > 500
+    p "**********" * 10 
+    p params[:id]
+    p params[:id] && params[:id].to_i > 500
+    render :inline => "Not authorized", :status => 403 if params[:id] && params[:id].to_i > 500
   end
 
   def viewed

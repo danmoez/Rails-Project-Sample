@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+<% if @resume != nil %>
+
+<strong>Name:</strong>
   <%= @resume.name %>
 </p>
 
@@ -40,5 +42,9 @@
   <%= @resume.summary %>
 </p>
 
+
 <%= link_to 'Edit', edit_resume_path(@resume) %> |
+<% end %>
+
 <%= link_to 'Back', resumes_path %>
+
